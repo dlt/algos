@@ -1,12 +1,11 @@
 class Solution {
     public void flatten(TreeNode root) {
         Queue<TreeNode> q = new ArrayDeque<>();
-        
+
         helper(root, q);
-        
-        TreeNode head = q.poll();
-        TreeNode curr = head;
-        
+
+        TreeNode curr = q.poll();
+
         while (!q.isEmpty()) {
             TreeNode node = q.poll();
             curr.left = null;
@@ -14,7 +13,6 @@ class Solution {
             curr = curr.right;
         }
     }
-    
     public void helper(TreeNode node, Queue<TreeNode> q) {
         if (node == null) return;
         q.add(node);
