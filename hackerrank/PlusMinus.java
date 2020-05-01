@@ -19,11 +19,12 @@ public class Solution {
             if (item == 0) zeroes++;
             if (item < 0) negatives++;
             if (item > 0) positives++;
-        };
+        }
+        ;
         float length = (float) arr.length;
 
         float fractionZ = zeroes == 0 ? zeroes : zeroes / length;
-        float fractionP = positives == 0 ? positives : positives / length; 
+        float fractionP = positives == 0 ? positives : positives / length;
         float fractionN = negatives == 0 ? negatives : negatives / length;
 
 

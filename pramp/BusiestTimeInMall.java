@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+
 /*
 Busiest Time in The Mall
 The Westfield Mall management is trying to figure out what the busiest moment at the mall was last year. You’re given data extracted from the mall’s door detectors. Each data point is represented as an integer array whose size is 3. The values at indices 0, 1 and 2 are the timestamp, the count of visitors, and whether the visitors entered or exited the mall (0 for exit and 1 for entrance), respectively. Here’s an example of a data point: [ 1440084737, 4, 0 ].
@@ -25,27 +26,27 @@ input:  data = [ [1487799425, 14, 1],
 output: 1487800378
 */
 class Solution {
-  	
-  static int findBusiestPeriod(int[][] data) {
-    int len = data.length;
-    int count = 0, maxCount = 0, maxTime = 0;
-    
-    for (int i = 0; i < len; i++) {
-      if (data[i][2] == 1) {
-        count += data[i][1];
-      } else {
-        count -= data[i][1];
-      }
-      if (i < len - 1 && data[i][0] == data[i+1][0]) continue;
-      
-      if (count > maxCount) {
-        maxCount = count;
-        maxTime = data[i][0];
-      }
-    }
-    return maxTime;
-  }
 
-  public static void main(String[] args) {
-  }
+    static int findBusiestPeriod(int[][] data) {
+        int len = data.length;
+        int count = 0, maxCount = 0, maxTime = 0;
+
+        for (int i = 0; i < len; i++) {
+            if (data[i][2] == 1) {
+                count += data[i][1];
+            } else {
+                count -= data[i][1];
+            }
+            if (i < len - 1 && data[i][0] == data[i + 1][0]) continue;
+
+            if (count > maxCount) {
+                maxCount = count;
+                maxTime = data[i][0];
+            }
+        }
+        return maxTime;
+    }
+
+    public static void main(String[] args) {
+    }
 }

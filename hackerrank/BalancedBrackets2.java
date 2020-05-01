@@ -20,8 +20,8 @@ public class Solution {
         final char closedParen = ')';
 
 
-        for (char c: s.toCharArray()) {
-            switch(c) {
+        for (char c : s.toCharArray()) {
+            switch (c) {
                 case openSquare:
                     brackets.push(c);
                     break;

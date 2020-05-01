@@ -51,16 +51,16 @@ public class Solution {
 
         int totalLuck = 0;
         int winIndex;
-        
+
         if (k == 0) {
             if (firstImportantIndex == 0) {
                 winIndex = 0;
             } else {
                 winIndex = contestsList.size();
-            } 
-         } else {
-             winIndex = firstImportantIndex + k;
-         }
+            }
+        } else {
+            winIndex = firstImportantIndex + k;
+        }
 
         for (int i = 0; i < contestsList.size(); i++) {
             Contest contest = contestsList.get(i);

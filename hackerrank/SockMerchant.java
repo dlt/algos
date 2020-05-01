@@ -13,13 +13,13 @@ public class Solution {
 
     // Complete the sockMerchant function below.
     static int sockMerchant(int n, int[] ar) {
-        for (int i: ar) {
+        for (int i : ar) {
             Integer count = socks.get(i) == null ? 0 : socks.get(i);
             socks.put(new Integer(i), new Integer(count + 1));
         }
         int pairedSocks = 0;
 
-        for (Map.Entry<Integer, Integer> entry: socks.entrySet()) {
+        for (Map.Entry<Integer, Integer> entry : socks.entrySet()) {
             if (entry.getValue() >= 2) {
                 pairedSocks += entry.getValue() / 2;
             }

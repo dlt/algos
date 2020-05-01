@@ -3,15 +3,15 @@ class Solution {
     // mp = 1
     public int maxProfit(int[] prices) {
         int maxProfit = 0;
-        
+
         int b = 0;
         int s = 1;
         int len = prices.length;
-        
+
         while (s < len && b < len) {
             int buy = prices[b];
             int sell = prices[s];
-            
+
             if (sell > buy) {
                 int profit = sell - buy;
                 if (profit > maxProfit) {
@@ -25,7 +25,7 @@ class Solution {
                     s++;
             }
         }
-        
+
         return maxProfit;
     }
 }

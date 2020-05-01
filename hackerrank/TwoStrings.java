@@ -20,7 +20,7 @@ public class TwoStrings {
             }
         }
 
-        
+
         for (int i = 0; i < s2.length(); i++) {
             for (int j = i; j < s2.length() && i < j + 1; j++) {
                 String sub = s2.substring(i, j + 1);

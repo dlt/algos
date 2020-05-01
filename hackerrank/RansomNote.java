@@ -18,7 +18,7 @@ public class Solution {
             magazineWords.put(word, count + 1);
         }
 
-        for (String word: note) {
+        for (String word : note) {
             if (!magazineWords.containsKey(word)) {
                 System.out.println("No");
                 return;

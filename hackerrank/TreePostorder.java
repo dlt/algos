@@ -5,7 +5,7 @@ class Node {
     Node left;
     Node right;
     int data;
-    
+
     Node(int data) {
         this.data = data;
         left = null;
@@ -34,12 +34,12 @@ class Node {
 
     }
 
-	public static Node insert(Node root, int data) {
-        if(root == null) {
+    public static Node insert(Node root, int data) {
+        if (root == null) {
             return new Node(data);
         } else {
             Node cur;
-            if(data <= root.data) {
+            if (data <= root.data) {
                 cur = insert(root.left, data);
                 root.left = cur;
             } else {
@@ -54,11 +54,11 @@ class Node {
         Scanner scan = new Scanner(System.in);
         int t = scan.nextInt();
         Node root = null;
-        while(t-- > 0) {
+        while (t-- > 0) {
             int data = scan.nextInt();
             root = insert(root, data);
         }
         scan.close();
         postOrder(root);
-    }	
+    }
 }

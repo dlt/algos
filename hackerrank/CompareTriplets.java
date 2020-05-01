@@ -7,6 +7,7 @@ import java.util.concurrent.*;
 import java.util.function.*;
 import java.util.regex.*;
 import java.util.stream.*;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
@@ -20,7 +21,7 @@ public class Solution {
             if (b.get(i) > a.get(i)) bobPoints++;
         }
 
-        return new ArrayList<>(Arrays.asList(new Integer[] { alicePoints, bobPoints }));
+        return new ArrayList<>(Arrays.asList(new Integer[]{alicePoints, bobPoints}));
     }
 
     public static void main(String[] args) throws IOException {
@@ -28,20 +29,20 @@ public class Solution {
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
         List<Integer> a = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
-            .collect(toList());
+                .map(Integer::parseInt)
+                .collect(toList());
 
         List<Integer> b = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
-            .map(Integer::parseInt)
-            .collect(toList());
+                .map(Integer::parseInt)
+                .collect(toList());
 
         List<Integer> result = compareTriplets(a, b);
 
         bufferedWriter.write(
-            result.stream()
-                .map(Object::toString)
-                .collect(joining(" "))
-            + "\n"
+                result.stream()
+                        .map(Object::toString)
+                        .collect(joining(" "))
+                        + "\n"
         );
 
         bufferedReader.close();

@@ -11,7 +11,7 @@ public class Solution {
 
     // Complete the matchingStrings function below.
     static int[] matchingStrings(String[] strings, String[] queries) {
-        for (String s: strings) {
+        for (String s : strings) {
             if (!index.containsKey(s)) {
                 index.put(s, 0);
             }
@@ -19,7 +19,7 @@ public class Solution {
             index.put(s, count + 1);
         }
         ArrayList<Integer> resultList = new ArrayList<>();
-        for (String q: queries) {
+        for (String q : queries) {
             resultList.add(index.getOrDefault(q, 0));
         }
         int[] result = new int[resultList.size()];

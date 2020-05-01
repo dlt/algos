@@ -15,8 +15,8 @@ public class Solution {
     static int superDigit(String n, int k) {
         String input = n;
         String result = "";
-        
-  
+
+
         result = result + n;
         while (result.length() > 1) {
             result = sumStringChars(result);
@@ -26,7 +26,7 @@ public class Solution {
         while (result.length() > 1) {
             result = sumStringChars(result);
         }
-    
+
         return Integer.parseInt(result);
     }
 

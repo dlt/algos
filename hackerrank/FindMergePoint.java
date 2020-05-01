@@ -79,7 +79,7 @@ public class Solution {
                 if (visited.get(curr2) != null) return curr2.data;
                 visited.put(curr2, new Boolean(true));
                 curr2 = curr2.next;
-            }            
+            }
         }
 
         return curr1 == curr2 ? curr1.data : 0;
@@ -108,8 +108,8 @@ public class Solution {
 
                 llist1.insertNode(llist1Item);
             }
-          
-          	SinglyLinkedList llist2 = new SinglyLinkedList();
+
+            SinglyLinkedList llist2 = new SinglyLinkedList();
 
             int llist2Count = scanner.nextInt();
             scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
@@ -120,8 +120,8 @@ public class Solution {
 
                 llist2.insertNode(llist2Item);
             }
-          
-          	SinglyLinkedListNode ptr1 = llist1.head;
+
+            SinglyLinkedListNode ptr1 = llist1.head;
             SinglyLinkedListNode ptr2 = llist2.head;
 
             for (int i = 0; i < llist1Count; i++) {
@@ -131,7 +131,7 @@ public class Solution {
             }
 
             for (int i = 0; i < llist2Count; i++) {
-                if (i != llist2Count-1) {
+                if (i != llist2Count - 1) {
                     ptr2 = ptr2.next;
                 }
             }

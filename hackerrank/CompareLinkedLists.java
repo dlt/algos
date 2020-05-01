@@ -99,8 +99,8 @@ public class Solution {
 
                 llist1.insertNode(llist1Item);
             }
-          
-          	SinglyLinkedList llist2 = new SinglyLinkedList();
+
+            SinglyLinkedList llist2 = new SinglyLinkedList();
 
             int llist2Count = scanner.nextInt();
             scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");

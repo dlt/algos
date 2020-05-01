@@ -3,8 +3,8 @@ import java.util.*;
 
 class Solution {
 
-  //  str1 = "abcd" str2 = "efghaa"
-  //  8 char
+    //  str1 = "abcd" str2 = "efghaa"
+    //  8 char
   /*
     hash1 = str1.chars
     hash2 = str2.chars
@@ -69,37 +69,37 @@ class Solution {
 
   */
 
-  static int deletionDistance(String word1, String word2) {
-    int n = word1.length();
-    int m = word2.length();
+    static int deletionDistance(String word1, String word2) {
+        int n = word1.length();
+        int m = word2.length();
 
-    // if one of the strings is empty
-    if (n * m == 0)
-      return n + m;
+        // if one of the strings is empty
+        if (n * m == 0)
+            return n + m;
 
-    int [][] d = new int[n + 1][m + 1];
+        int[][] d = new int[n + 1][m + 1];
 
-    for (int i = 0; i < n + 1; i++) {
-      for (int j = 0; j < m + 1; j++) {
-        if (i == 0) {
-          d[i][j] = j;
-        } else if (j == 0) {
-          d[i][j] = i;
-        } else if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
-          d[i][j] = d[i-1][j-1];
-        } else {
-          d[i][j] = Math.min(d[i-1][j],d[i][j-1]) + 1;
+        for (int i = 0; i < n + 1; i++) {
+            for (int j = 0; j < m + 1; j++) {
+                if (i == 0) {
+                    d[i][j] = j;
+                } else if (j == 0) {
+                    d[i][j] = i;
+                } else if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
+                    d[i][j] = d[i - 1][j - 1];
+                } else {
+                    d[i][j] = Math.min(d[i - 1][j], d[i][j - 1]) + 1;
+                }
+            }
         }
-      }
+
+        return d[n][m];
     }
-    
-    return d[n][m];
-  }      
-  
-  public static void main(String[] args) {
-    System.out.println(deletionDistance("", ""));
-    System.out.println(deletionDistance("aa", "a"));
-    System.out.println(deletionDistance("aab", "ab"));
-  }
+
+    public static void main(String[] args) {
+        System.out.println(deletionDistance("", ""));
+        System.out.println(deletionDistance("aa", "a"));
+        System.out.println(deletionDistance("aab", "ab"));
+    }
 
 }

@@ -5,7 +5,7 @@ class Node {
     Node left;
     Node right;
     int data;
-    
+
     Node(int data) {
         this.data = data;
         left = null;
@@ -17,14 +17,14 @@ class Solution {
 
     private static int maxHeight = 0;
 
-	/*
+    /*
     class Node 
-    	int data;
-    	Node left;
-    	Node right;
-	*/
-	public static int height(Node root) {
-      	goDown(root.left, 0);
+        int data;
+        Node left;
+        Node right;
+    */
+    public static int height(Node root) {
+        goDown(root.left, 0);
         goDown(root.right, 0);
         return maxHeight;
     }
@@ -37,12 +37,12 @@ class Solution {
         goDown(node.right, height + 1);
     }
 
-	public static Node insert(Node root, int data) {
-        if(root == null) {
+    public static Node insert(Node root, int data) {
+        if (root == null) {
             return new Node(data);
         } else {
             Node cur;
-            if(data <= root.data) {
+            if (data <= root.data) {
                 cur = insert(root.left, data);
                 root.left = cur;
             } else {
@@ -57,12 +57,12 @@ class Solution {
         Scanner scan = new Scanner(System.in);
         int t = scan.nextInt();
         Node root = null;
-        while(t-- > 0) {
+        while (t-- > 0) {
             int data = scan.nextInt();
             root = insert(root, data);
         }
         scan.close();
         int height = height(root);
         System.out.println(height);
-    }	
+    }
 }

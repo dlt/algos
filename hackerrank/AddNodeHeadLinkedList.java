@@ -26,8 +26,6 @@ public class Solution {
             this.head = null;
             this.tail = null;
         }
-
-      
     }
 
     public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter) throws IOException {
@@ -72,12 +70,11 @@ public class Solution {
         for (int i = 0; i < llistCount; i++) {
             int llistItem = scanner.nextInt();
             scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
-        	
-          SinglyLinkedListNode llist_head = insertNodeAtHead(llist.head, llistItem);
 
-          llist.head = llist_head;
+            SinglyLinkedListNode llist_head = insertNodeAtHead(llist.head, llistItem);
+
+            llist.head = llist_head;
         }
-
 
 
         printSinglyLinkedList(llist.head, "\n", bufferedWriter);
